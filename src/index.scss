@@ -1,3 +1,8 @@
 @import "scss/all";
 @import "scss/reset";
 @import "scss/root";
+
+body {
+  background-color: $body-bg-color;
+  color: $body-text-color;
+}
