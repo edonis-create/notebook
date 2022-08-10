@@ -1,0 +1,73 @@
+/*=============================================
+=            Responsivness            =
+=============================================*/
+@mixin desktop {
+  @media (max-width: map-get($breakpoints,"xl")) {
+    @content;
+  }
+}
+@mixin laptop {
+  @media (max-width: map-get($breakpoints,"lg")) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (max-width: map-get($breakpoints,"md")) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media (max-width: map-get($breakpoints,"sm")) {
+    @content;
+  }
+}
+@mixin small-device {
+  @media (max-width: map-get($breakpoints,"xs")) {
+    @content;
+  }
+}
+
+/*=====  End of Responsivness  ======*/
+
+/*=============================================
+    =            Margins mixins            =
+    =============================================*/
+
+@mixin margin($param) {
+  margin: map-get($spacing, $param);
+}
+@mixin margin-top($param) {
+  margin-top: map-get($spacing, $param);
+}
+@mixin margin-bottom($param) {
+  margin-bottom: map-get($spacing, $param);
+}
+@mixin margin-left($param) {
+  margin-left: map-get($spacing, $param);
+}
+@mixin margin-right($param) {
+  margin-right: map-get($spacing, $param);
+}
+
+/*=====  End of Margin mixins  ======*/
+
+/*=============================================
+    =            Padding mixins            =
+    =============================================*/
+@mixin padding($param) {
+  padding: map-get($spacing, $param);
+}
+@mixin padding-top($param) {
+  padding-top: map-get($spacing, $param);
+}
+@mixin padding-bottom($param) {
+  padding-bottom: map-get($spacing, $param);
+}
+@mixin padding-left($param) {
+  padding-left: map-get($spacing, $param);
+}
+@mixin padding-right($param) {
+  padding-right: map-get($spacing, $param);
+}
+
+/*=====  End of Padding mixins  ======*/

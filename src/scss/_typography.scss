@@ -1,0 +1,26 @@
+/*=============================================
+=            Body text sizes            =
+=============================================*/
+$body-font-size: var(--flex-body-font-size, $fs-sm) !default;
+$body-font-weight: var(--flex-body-font-weight, $fw-normal) !default;
+
+$body-font-family: $sans-serif;
+
+/*=============================================
+=            Heading Text sizes            =
+=============================================*/
+$h-1-font-size: var(--flex-h-1-font-size, $h-1) !default;
+$h-2-font-size: var(--flex-h-2-font-size, $h-2) !default;
+$h-3-font-size: var(--flex-h-3-font-size, $h-3) !default;
+$h-4-font-size: var(--flex-h-4-font-size, $h-4) !default;
+$h-5-font-size: var(--flex-h-5-font-size, $h-5) !default;
+$h-6-font-size: var(--flex-h-6-font-size, $h-6) !default;
+
+/*=============================================
+=            Heading font weights           =
+=============================================*/
+$h-1-font-weight: var(--flex-h-1-font-weight, $fw-black) !default;
+$h-2-font-weight: var(--flex-h-2-font-weight, $fw-semibold) !default;
+$h-3-font-weight: var(--flex-h-3-font-weight, $fw-bold) !default;
+$h-5-font-weight: var(--flex-h-5-font-weight, $fw-normal) !default;
+$h-6-font-weight: var(--flex-h-6-font-weight, $fw-light) !default;

@@ -1,0 +1,28 @@
+:root {
+  --flex-body-text-color: #{$black};
+  --flex-body-bg-color: #{$white};
+
+  --flex-btn-primary-color: #{$white};
+  --flex-btn-primary-bg: #{$light-blue 0%, $blue 100%};
+  --flex-btn-primary-bg-hover: #{$blue 0%, $light-blue 100%};
+
+  --flex-btn-secondary-color: #{$white};
+  --flex-btn-secondary-bg-color: #{$gold};
+
+  --flex-body-font-size: #{$fs-base};
+  --flex-body-font-weight: #{$fw-normal};
+
+  --flex-h1-font-size: #{$h-1};
+  --flex-h2-font-size: #{$h-2};
+  --flex-h3-font-size: #{$h-3};
+  --flex-h4-font-size: #{$h-4};
+  --flex-h5-font-size: #{$h-5};
+  --flex-h6-font-size: #{$h-6};
+
+  --flex-h1-font-weight: #{$fw-semibold};
+  --flex-h2-font-weight: #{$fw-semibold};
+  --flex-h3-font-weight: #{$fw-semibold};
+  --flex-h4-font-weight: #{$fw-normal};
+  --flex-h5-font-weight: #{$fw-normal};
+  --flex-h6-font-weight: #{$fw-light};
+}
