@@ -1,0 +1,14 @@
+@import "./all";
+/*=============================================
+=            Width and Height classes            =
+=============================================*/
+
+@each $size, $value in $spacing {
+  .flex-width-#{$size} {
+    width: $value;
+  }
+  .flex-height-#{$size} {
+    height: $value;
+  }
+}
+/*=====  End of Width and Height classes  ======*/

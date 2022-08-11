@@ -108,5 +108,41 @@ $spacing: (
 /*=====  End of Spacing  ======*/
 
 /*=============================================
-=            Shadows            =
+=            Flex directions            =
 =============================================*/
+$flex-direction: (
+  row: row,
+  column: column,
+  row-reverse: row-reverse,
+  column-reverse: column-reverse,
+);
+
+/*=====  End of Flex directions  ======*/
+
+/*=============================================
+=            Flex Justify Content            =
+=============================================*/
+
+$flex-justify-content: (
+  flex-start: flex-start,
+  flex-end: flex-end,
+  center: center,
+  space-between: space-between,
+  space-around: space-around,
+  space-evenly: space-evenly,
+);
+/*=====  End of Flex Justify Content  ======*/
+
+/*=============================================
+=            Flex Align Items            =
+=============================================*/
+
+$flex-align-items: (
+  flex-start: flex-start,
+  flex-end: flex-end,
+  center: center,
+  baseline: baseline,
+  stretch: stretch,
+);
+
+/*=====  End of Flex Align Items  ======*/
