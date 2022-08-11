@@ -1,5 +1,6 @@
 import "./App.scss";
 
+import SearchInput from "./components/SearchInput/SearchInput";
 import Stack from "./components/Stack/Stack";
 
 function App() {
@@ -10,9 +11,7 @@ function App() {
         justifyContent="space-between"
         alignItems="flex-end"
       >
-        <div className="box">1</div>
-        <div className="box">2</div>
-        <div className="box">3</div>
+        <SearchInput fontSize="xl" value="Ermir" />
       </Stack>
     </div>
   );

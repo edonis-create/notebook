@@ -34,3 +34,15 @@ $btn-secondary-color: var(--flex-btn-secondary-color, $white) !default;
 $btn-secondary-bg-color: var(--flex-btn-secondary-bg-color, $gold) !default;
 
 /*=====  End of Buttons  ======*/
+
+/*=============================================
+=            SearchInput            =
+=============================================*/
+$search-input-color: var(--flex-search-input-color, $gray) !default;
+$search-input-bg-color: var(--flex-search-input-bg-color, $white) !default;
+$search-input-border-color: var(
+  --flex-search-input-border-color,
+  $gray
+) !default;
+
+/*=====  End of SearchInput  ======*/

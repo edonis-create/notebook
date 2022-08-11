@@ -12,3 +12,13 @@
   }
 }
 /*=====  End of Width and Height classes  ======*/
+
+/*=============================================
+=            Font Size Classes            =
+=============================================*/
+@each $font, $size in $font-sizes {
+  .flex-font-size-#{$font} {
+    font-size: $size;
+  }
+}
+/*=====  End of Font Sizes  ======*/
