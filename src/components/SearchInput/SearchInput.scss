@@ -1,0 +1,12 @@
+@import "../../scss/all";
+.search {
+  background-color: $search-input-bg-color;
+  color: $search-input-color;
+  border: map-get($spacing, "none");
+  border-radius: map-get($spacing, "xxs");
+  @include padding-top(xxxs);
+  @include padding-bottom(xxxs);
+  @include padding-left(xs);
+  @include padding-right(xs);
+  outline-style: none;
+}

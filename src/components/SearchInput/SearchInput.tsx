@@ -1,21 +1,17 @@
+import "./SearchInput.scss";
+
 import React, { useState } from "react";
 
 import { FontSize } from "../../foundation/FontSizes";
 
 export type ISearchInputProps = React.ComponentProps<"input"> & {
-  icon?: React.ReactNode;
-  iconClassName?: string;
   className?: string;
-  inputClassName?: string;
   fontSize?: FontSize;
 };
 
 const SearchInput: React.FunctionComponent<ISearchInputProps> = ({
   onChange,
-  icon: Icon = null,
-  iconClassName,
   className,
-  inputClassName,
   fontSize = "base",
   ...restProps
 }) => {
@@ -32,22 +28,18 @@ const SearchInput: React.FunctionComponent<ISearchInputProps> = ({
     onChange && onChange(e);
   };
 
-  const classNames = [`search`, className].join(" ");
-  const inputClassNames = [`flex-font-size-${fontSize}`, inputClassName].join(
+  const inputClassNames = [`search flex-font-size-${fontSize}`, className].join(
     " "
   );
 
   return (
-    <div className={classNames}>
-      {Icon && <div className={iconClassName}>{Icon}</div>}
-      <input
-        className={inputClassNames}
-        type="search"
-        onChange={handleOnChange}
-        value={currentValue}
-        {...restProps}
-      />
-    </div>
+    <input
+      className={inputClassNames}
+      type="search"
+      onChange={handleOnChange}
+      value={currentValue}
+      {...restProps}
+    />
   );
 };
 

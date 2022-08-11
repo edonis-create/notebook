@@ -6,12 +6,8 @@ import Stack from "./components/Stack/Stack";
 function App() {
   return (
     <div className="App">
-      <Stack
-        direction="row"
-        justifyContent="space-between"
-        alignItems="flex-end"
-      >
-        <SearchInput fontSize="xl" value="Ermir" />
+      <Stack direction="row" justifyContent="center" alignItems="flex-end">
+        <SearchInput fontSize="base" value="Ermir" />
       </Stack>
     </div>
   );
