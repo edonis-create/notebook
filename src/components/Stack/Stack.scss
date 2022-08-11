@@ -1,0 +1,27 @@
+@import "../../scss/all";
+.flex {
+  display: flex;
+}
+
+/*=============================================
+=            Generate Flex Classes            =
+=============================================*/
+
+@each $direction, $value in $flex-direction {
+  .flex-#{$direction} {
+    flex-direction: $value;
+  }
+}
+
+@each $justifyContent, $value in $flex-justify-content {
+  .flex-justify-#{$justifyContent} {
+    justify-content: $value;
+  }
+}
+@each $alignItems, $value in $flex-align-items {
+  .flex-align-#{$alignItems} {
+    align-items: $value;
+  }
+}
+
+/*=====  End of Generate Flex Classes  ======*/
