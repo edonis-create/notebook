@@ -6,8 +6,9 @@
   --flex-btn-primary-bg: #{$light-blue 0%, $blue 100%};
   --flex-btn-primary-bg-hover: #{$blue 0%, $light-blue 100%};
 
-  --flex-btn-secondary-color: #{$white};
-  --flex-btn-secondary-bg-color: #{$gold};
+  --flex-btn-secondary-color: #{$blue};
+  --flex-btn-secondary-bg-color: #{$white};
+  --flex-btn-secondary-border-color: #{$blue};
 
   --flex-body-font-size: #{$fs-base};
   --flex-body-font-weight: #{$fw-normal};

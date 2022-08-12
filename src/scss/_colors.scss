@@ -21,17 +21,15 @@ $btn-primary-bg-color: var(
   $blue 100%
 ) !default;
 
-$btn-primary-hover-bg-color: var(
-  --flex-btn-primary-hover-bg-color,
-  $blue 0%,
-  $light-blue 100%
-) !default;
-
 /*----------  Secondary Button  ----------*/
 
-$btn-secondary-color: var(--flex-btn-secondary-color, $white) !default;
+$btn-secondary-color: var(--flex-btn-secondary-color, $blue) !default;
 
-$btn-secondary-bg-color: var(--flex-btn-secondary-bg-color, $gold) !default;
+$btn-secondary-bg-color: var(--flex-btn-secondary-bg-color, $white) !default;
+$btn-secondary-border-color: var(
+  --flex-btn-secondary-border-color,
+  $blue
+) !default;
 
 /*=====  End of Buttons  ======*/
 
