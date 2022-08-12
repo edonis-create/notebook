@@ -1,6 +1,7 @@
 import "./App.scss";
 
 import Button from "./components/Button/Button";
+import HorizontalLine from "./components/HorizontalLine/HorizontalLine";
 import NoteCard from "./components/NoteCard/NoteCard";
 import { ReactComponent as NoteIcon } from "./assets/icons/new-note.svg";
 import SearchInput from "./components/SearchInput/SearchInput";
@@ -22,6 +23,7 @@ function App() {
           created_at="10.10.2022"
           category="Tech"
         />
+        <HorizontalLine />
       </Stack>
     </div>
   );
