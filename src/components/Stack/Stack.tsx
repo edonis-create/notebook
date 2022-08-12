@@ -1,4 +1,5 @@
 import "./Stack.scss";
+import "../NotesCardList/NotesCardList.scss";
 
 import {
   FlexAlignItems,
@@ -24,7 +25,7 @@ const Stack: React.FunctionComponent<IStackProps> = ({
   className: classNameProp,
 }) => {
   const className = [
-    `flex flex-${direction} flex-justify-${justifyContent} flex-align-${alignItems}`,
+    `flex flex-${direction} flex-justify-${justifyContent} flex-align-${alignItems} `,
     classNameProp,
   ].join(" ");
   return <div className={className}>{children}</div>;

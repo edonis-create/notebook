@@ -1,19 +1,30 @@
 import "./LeftNavHeader.scss";
 
 import Button from "../Button/Button";
-import HorizontalLine from "../HorizontalLine/HorizontalLine";
 import { ReactComponent as NoteIcon } from "../../assets/icons/new-note.svg";
 import SearchInput from "../SearchInput/SearchInput";
 import Stack from "../Stack/Stack";
 
-const LeftNavHeader = () => {
+interface ILeftNavHeaderProps {
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+const LeftNavHeader: React.FunctionComponent<ILeftNavHeaderProps> = ({
+  onChange,
+}) => {
+  const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) =>
+    onChange(e);
   return (
     <Stack
       className="left-nav-header"
       justifyContent="space-between"
       alignItems="center"
     >
-      <SearchInput className="search-nav" placeholder="Search notes" />
+      <SearchInput
+        onChange={handleOnChange}
+        className="search-nav"
+        placeholder="Search notes by category"
+      />
       <Button designType="icon" leftIcon={<NoteIcon />} />
     </Stack>
   );
