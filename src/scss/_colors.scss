@@ -40,3 +40,11 @@ $search-input-border-color: var(
 ) !default;
 
 /*=====  End of SearchInput  ======*/
+
+/*=============================================
+=            Note Card            =
+=============================================*/
+$note-card-heading-color: var(--flex-note-card-heading-color, $black) !default;
+$note-card-bg-color: var(--flex-note-card-bg-color, $white-dark) !default;
+$note-card-footer-color: var(--flex-note-card-footer-color, $gray) !default;
+/*=====  End of Note Card  ======*/

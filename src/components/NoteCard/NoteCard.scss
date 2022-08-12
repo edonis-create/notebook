@@ -1,0 +1,23 @@
+@import "../../scss/all";
+
+.note-card {
+  background-color: $note-card-bg-color;
+  @include padding("xs");
+  cursor: pointer;
+  width: 100%;
+  &__title {
+    color: $note-card-heading-color;
+    @include margin-bottom("xs");
+    @include margin-top("none");
+    font-size: map-get($font-sizes, "lg");
+    font-weight: $fw-normal;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  &__footer {
+    color: $note-card-footer-color;
+    @include margin("none");
+    font-size: map-get($font-sizes, "sm");
+  }
+}
