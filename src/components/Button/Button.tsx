@@ -1,13 +1,14 @@
-import fontSize, { FontSize } from "../../foundation/FontSizes";
+import "./Button.scss";
 
+import { FontSize } from "../../foundation/FontSizes";
 import React from "react";
 import Spaces from "../../foundation/Spacing";
 
 type DesignType = "primary" | "secondary" | "icon";
 
 export type ButtonType = React.ComponentProps<"button"> & {
-  leftIcon?: typeof React.Component;
-  rightIcon?: typeof React.Component;
+  leftIcon?: React.ReactElement;
+  rightIcon?: React.ReactElement;
   designType?: DesignType;
   animated?: boolean;
   labelClassName?: string;
@@ -44,7 +45,7 @@ const Button = (props: ButtonType): JSX.Element => {
         <div
           className={`button-icon__left  ${iconClassName ? iconClassName : ""}`}
         >
-          {<LeftIcon />}
+          {LeftIcon}
         </div>
       )}
       {label && (
@@ -62,7 +63,7 @@ const Button = (props: ButtonType): JSX.Element => {
             iconClassName ? iconClassName : ""
           }`}
         >
-          {<RightIcon />}
+          {RightIcon}
         </div>
       )}
     </button>

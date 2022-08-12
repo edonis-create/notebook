@@ -15,15 +15,11 @@ $body-bg-color: var(--flex-body-bg-color, $white) !default;
 
 $btn-primary-color: var(--flex-btn-primary-color, $white) !default;
 
-$btn-primary-bg-color: var(
-  --flex-btn-primary-bg-color,
-  $light-blue 0%,
-  $blue 100%
-) !default;
+$btn-primary-bg-color: var(--flex-btn-primary-bg-color, $light-blue) !default;
 
 /*----------  Secondary Button  ----------*/
 
-$btn-secondary-color: var(--flex-btn-secondary-color, $blue) !default;
+$btn-secondary-color: var(--flex-btn-secondary-color, $light-blue) !default;
 
 $btn-secondary-bg-color: var(--flex-btn-secondary-bg-color, $white) !default;
 $btn-secondary-border-color: var(

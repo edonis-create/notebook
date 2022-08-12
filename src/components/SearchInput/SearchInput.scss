@@ -2,7 +2,7 @@
 .search {
   background-color: $search-input-bg-color;
   color: $search-input-color;
-  border: 1px solid $search-input-border-color;
+  @include border($search-input-border-color);
   border-radius: map-get($spacing, "xxs");
   @include padding-top(xxxs);
   @include padding-bottom(xxxs);

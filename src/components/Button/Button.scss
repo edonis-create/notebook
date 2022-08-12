@@ -1,2 +1,26 @@
+@import "../../scss/all";
 .button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  &-primary {
+    @include btnProps($btn-primary-bg-color, $btn-primary-color, $light-blue);
+  }
+  &-secondary {
+    @include btnProps(
+      $btn-secondary-bg-color,
+      $btn-secondary-color,
+      $light-blue
+    );
+  }
+  &-icon {
+    @include btnProps(transparent, $blue, transparent);
+    &__right {
+      @include margin-left("xxxs");
+    }
+    &__left {
+      @include margin-right("xxxs");
+    }
+  }
 }

@@ -71,3 +71,22 @@
 }
 
 /*=====  End of Padding mixins  ======*/
+
+/*=============================================
+=            Border            =
+=============================================*/
+@mixin border($color) {
+  border: 1px solid $color;
+}
+
+/*=====  End of Border  ======*/
+
+/*=============================================
+=            Button Properties            =
+=============================================*/
+@mixin btnProps($background, $color, $border) {
+  background-color: $background;
+  color: $color;
+  @include border($border);
+  border-radius: map-get($spacing, "xxs");
+}
