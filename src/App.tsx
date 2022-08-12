@@ -10,7 +10,12 @@ function App() {
     <div className="App">
       <Stack direction="row" justifyContent="center" alignItems="flex-end">
         <SearchInput fontSize="base" value="Ermir" />
-        <Button leftIcon={<NoteIcon />} designType="icon" fontSize="sm" />
+        <Button
+          leftIcon={<NoteIcon />}
+          designType="icon"
+          width="md"
+          fontSize="sm"
+        />
       </Stack>
     </div>
   );

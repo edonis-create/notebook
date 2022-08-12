@@ -16,6 +16,7 @@
   }
   &-icon {
     @include btnProps(transparent, $blue, transparent);
+    @include padding("none");
     &__right {
       @include margin-left("xxxs");
     }

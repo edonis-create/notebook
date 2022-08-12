@@ -10,7 +10,6 @@ export type ButtonType = React.ComponentProps<"button"> & {
   leftIcon?: React.ReactElement;
   rightIcon?: React.ReactElement;
   designType?: DesignType;
-  animated?: boolean;
   labelClassName?: string;
   iconClassName?: string;
   label?: string;
