@@ -2,11 +2,13 @@ import "./LeftNav.scss";
 
 import HorizontalLine from "../HorizontalLine/HorizontalLine";
 import LeftNavHeader from "../LeftNavHeader/LeftNavHeader";
+import { NoteData } from "../../dummy-data/data";
 import NotesCardList from "../NotesCardList/NotesCardList";
-import { notesData } from "../../dummy-data/data";
+import { useSelector } from "react-redux";
 import { useState } from "react";
 
 const LeftNav = () => {
+  const notesData = useSelector((state: any) => state.notesData.notesData);
   const [notes, setNotes] = useState(notesData);
 
   /**
@@ -16,7 +18,7 @@ const LeftNav = () => {
    */
   const filterNotesByCategory = (text: string) => {
     setNotes(
-      notesData.filter((note) =>
+      notesData.filter((note: NoteData) =>
         note.category.toLowerCase().includes(text.toLowerCase())
       )
     );

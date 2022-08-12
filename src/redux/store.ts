@@ -1,7 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-
+import notesDataReducer from "./slices/NotesDataSlice";
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    notesData: notesDataReducer,
+  },
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
