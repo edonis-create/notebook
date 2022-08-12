@@ -4,27 +4,13 @@ import Button from "./components/Button/Button";
 import HorizontalLine from "./components/HorizontalLine/HorizontalLine";
 import NoteCard from "./components/NoteCard/NoteCard";
 import { ReactComponent as NoteIcon } from "./assets/icons/new-note.svg";
-import SearchInput from "./components/SearchInput/SearchInput";
-import Stack from "./components/Stack/Stack";
+import NotesCardList from "./components/NotesCardList/NotesCardList";
+import { notesData } from "./dummy-data/data";
 
 function App() {
   return (
     <div className="App">
-      <Stack direction="row" justifyContent="center" alignItems="flex-end">
-        <SearchInput fontSize="base" value="Ermir" />
-        <Button
-          leftIcon={<NoteIcon />}
-          designType="icon"
-          width="md"
-          fontSize="sm"
-        />
-        <NoteCard
-          title="My first note lkfansdklnakldnwklnakldnkla"
-          created_at="10.10.2022"
-          category="Tech"
-        />
-        <HorizontalLine />
-      </Stack>
+      <NotesCardList notesData={notesData} />
     </div>
   );
 }
