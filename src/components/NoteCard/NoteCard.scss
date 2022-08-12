@@ -4,7 +4,6 @@
   background-color: $note-card-bg-color;
   @include padding("xs");
   cursor: pointer;
-  width: 100%;
   &__title {
     color: $note-card-heading-color;
     @include margin-bottom("xs");

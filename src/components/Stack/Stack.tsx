@@ -10,7 +10,7 @@ import React from "react";
 
 interface IStackProps {
   children: React.ReactNode;
-  direction: FlexDirection;
+  direction?: FlexDirection;
   justifyContent: FlexJustifyContent;
   alignItems: FlexAlignItems;
   className?: string;

@@ -1,0 +1,7 @@
+@import "../../scss/all";
+.left-nav-header {
+  @include padding("xs");
+  @include padding-top("md");
+  width: 100%;
+  @include margin-bottom("sm");
+}

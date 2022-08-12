@@ -3,7 +3,7 @@
   background-color: $search-input-bg-color;
   color: $search-input-color;
   @include border($search-input-border-color);
-  border-radius: map-get($spacing, "xxs");
+  border-radius: map-get($spacing, "xxl");
   @include padding-top(xxxs);
   @include padding-bottom(xxxs);
   @include padding-left(xs);
