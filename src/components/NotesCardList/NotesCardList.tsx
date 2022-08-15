@@ -3,6 +3,8 @@ import NoteCard from "../NoteCard/NoteCard";
 import { NotesData } from "../../dummy-data/data";
 import React from "react";
 import Stack from "../Stack/Stack";
+import { setActiveNote } from "../../redux/slices/activeNoteSlice";
+import { useDispatch } from "react-redux";
 
 interface INotesCardListProps {
   notesData: NotesData;
@@ -11,6 +13,7 @@ interface INotesCardListProps {
 const NotesCardList: React.FunctionComponent<INotesCardListProps> = ({
   notesData,
 }) => {
+  const dispatch = useDispatch();
   if (notesData.length === 0) {
     return (
       <Stack className="notes-list" justifyContent="center" alignItems="center">
@@ -18,6 +21,12 @@ const NotesCardList: React.FunctionComponent<INotesCardListProps> = ({
       </Stack>
     );
   }
+  /**
+   * It takes an id, and then dispatches the setActiveNote action with that id
+   * @param {number} id - number - the id of the note to be set as active
+   */
+  const handleSetActiveNote = (id: number) => dispatch(setActiveNote(id));
+
   return (
     <div className="notes-list">
       {notesData.map(({ title, created_at, category, id }) => {
@@ -25,6 +34,7 @@ const NotesCardList: React.FunctionComponent<INotesCardListProps> = ({
           <>
             <NoteCard
               key={id}
+              onClick={() => handleSetActiveNote(id)}
               title={title}
               created_at={created_at}
               category={category}

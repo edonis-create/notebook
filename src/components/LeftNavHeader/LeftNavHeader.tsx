@@ -1,8 +1,8 @@
 import "./LeftNavHeader.scss";
 
 import Button from "../Button/Button";
+import Input from "../SearchInput/SearchInput";
 import { ReactComponent as NoteIcon } from "../../assets/icons/new-note.svg";
-import SearchInput from "../SearchInput/SearchInput";
 import Stack from "../Stack/Stack";
 
 interface ILeftNavHeaderProps {
@@ -20,9 +20,10 @@ const LeftNavHeader: React.FunctionComponent<ILeftNavHeaderProps> = ({
       justifyContent="space-between"
       alignItems="center"
     >
-      <SearchInput
+      <Input
         onChange={handleOnChange}
         className="search-nav"
+        type="search"
         placeholder="Search notes by category"
       />
       <Button designType="icon" leftIcon={<NoteIcon />} />

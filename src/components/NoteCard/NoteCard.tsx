@@ -7,6 +7,7 @@ interface INoteCardProps {
   created_at: string;
   category: string;
   className?: string;
+  onClick?: () => void;
 }
 
 const NoteCard: React.FunctionComponent<INoteCardProps> = ({
@@ -14,10 +15,11 @@ const NoteCard: React.FunctionComponent<INoteCardProps> = ({
   created_at,
   category,
   className,
+  onClick,
 }) => {
   const classNames = ["note-card", className].join(" ");
   return (
-    <div className={classNames}>
+    <div onClick={onClick} className={classNames}>
       <h2 className="note-card__title">{title}</h2>
       <p className="note-card__footer">
         {created_at} ⊛ {category}

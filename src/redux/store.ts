@@ -1,8 +1,10 @@
+import activeNoteReducer from "./slices/activeNoteSlice";
 import { configureStore } from "@reduxjs/toolkit";
 import notesDataReducer from "./slices/NotesDataSlice";
 export const store = configureStore({
   reducer: {
     notesData: notesDataReducer,
+    activeNote: activeNoteReducer,
   },
 });
 

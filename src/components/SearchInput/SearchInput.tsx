@@ -4,12 +4,12 @@ import React, { useState } from "react";
 
 import { FontSize } from "../../foundation/FontSizes";
 
-export type ISearchInputProps = React.ComponentProps<"input"> & {
+export type IInputProps = React.ComponentProps<"input"> & {
   className?: string;
   fontSize?: FontSize;
 };
 
-const SearchInput: React.FunctionComponent<ISearchInputProps> = ({
+const Input: React.FunctionComponent<IInputProps> = ({
   onChange,
   className,
   fontSize = "base",
@@ -43,4 +43,4 @@ const SearchInput: React.FunctionComponent<ISearchInputProps> = ({
   );
 };
 
-export default SearchInput;
+export default Input;

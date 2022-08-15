@@ -10,18 +10,17 @@ import {
 import React from "react";
 
 interface IStackProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   direction?: FlexDirection;
-  justifyContent: FlexJustifyContent;
-  alignItems: FlexAlignItems;
+  justifyContent?: FlexJustifyContent;
+  alignItems?: FlexAlignItems;
   className?: string;
 }
-
 const Stack: React.FunctionComponent<IStackProps> = ({
   children,
   direction = "row",
-  justifyContent,
-  alignItems,
+  justifyContent = "flex-start",
+  alignItems = "flex-start",
   className: classNameProp,
 }) => {
   const className = [
