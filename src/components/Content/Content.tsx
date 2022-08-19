@@ -8,13 +8,15 @@ import Stack from "../Stack/Stack";
 import { addNotesData } from "../../redux/slices/NotesDataSlice";
 
 const Content = () => {
-  const activeNotId = useSelector(
+  const activeNoteId = useSelector(
     (state: any) => state.activeNote.activeNoteId
   );
-  const Notes = useSelector((state: any) => state.notesData.notesData);
+  const notes = useSelector((state: any) => state.notesData.notesData);
   const dispatch = useDispatch();
-  /* Finding the active note from the list of notes. */
-  const activeNote = Notes.find((note: NoteData) => note.id === activeNotId);
+  /* Finding the active note in the notes array. If there is no active note, it will return the last note
+in the array. */
+  const activeNote =
+    notes.find((note: NoteData) => note.id === activeNoteId) ?? notes.at(-1);
 
   /**
    * It takes a note as an argument, and then it returns a new array of notes, where the note that
@@ -22,7 +24,7 @@ const Content = () => {
    * @param {NoteData} note - NoteData - this is the note that we want to update
    */
   const handleUpdateNote = (note: NoteData) => {
-    const newNotes = Notes.map((noteData: NoteData) => {
+    const newNotes = notes.map((noteData: NoteData) => {
       if (noteData.id === note.id) {
         return note;
       }

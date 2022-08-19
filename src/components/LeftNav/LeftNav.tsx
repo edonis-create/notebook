@@ -1,15 +1,20 @@
 import "./LeftNav.scss";
 
+import { useEffect, useState } from "react";
+
 import HorizontalLine from "../HorizontalLine/HorizontalLine";
 import LeftNavHeader from "../LeftNavHeader/LeftNavHeader";
 import { NoteData } from "../../dummy-data/data";
 import NotesCardList from "../NotesCardList/NotesCardList";
 import { useSelector } from "react-redux";
-import { useState } from "react";
 
 const LeftNav = () => {
   const notesData = useSelector((state: any) => state.notesData.notesData);
-  const [notes, setNotes] = useState(notesData);
+  const [notes, setNotes] = useState([]);
+
+  useEffect(() => {
+    setNotes(notesData);
+  }, [notesData]);
 
   /**
    * FilterNotesByCategory is a function that takes a string as an argument and returns a filtered array
