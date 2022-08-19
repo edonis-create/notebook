@@ -4,10 +4,13 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { NoteData } from "../../dummy-data/data";
 import NoteForm from "../NoteForm/NoteForm";
+import NotePreview from "../NotePreview/NotePreview";
 import Stack from "../Stack/Stack";
 import { addNotesData } from "../../redux/slices/NotesDataSlice";
+import { useState } from "react";
 
 const Content = () => {
+  const [editNote, setEditNote] = useState<boolean>(false);
   const activeNoteId = useSelector(
     (state: any) => state.activeNote.activeNoteId
   );
@@ -44,9 +47,14 @@ in the array. */
       </Stack>
     );
   }
-  return (
+  if (editNote) {
     <Stack direction="column" alignItems="center" className="content">
       <NoteForm activeNote={activeNote} handleUpdateNote={handleUpdateNote} />
+    </Stack>;
+  }
+  return (
+    <Stack direction="column" alignItems="center" className="content">
+      <NotePreview note={activeNote} />
     </Stack>
   );
 };
