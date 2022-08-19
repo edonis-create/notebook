@@ -1,4 +1,4 @@
-import "./SearchInput.scss";
+import "./Input.scss";
 
 import React, { useState } from "react";
 

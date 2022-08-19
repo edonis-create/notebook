@@ -1,7 +1,7 @@
 import "./LeftNavHeader.scss";
 
 import Button from "../Button/Button";
-import Input from "../SearchInput/SearchInput";
+import Input from "../SearchInput/Input";
 import { ReactComponent as NoteIcon } from "../../assets/icons/new-note.svg";
 import Stack from "../Stack/Stack";
 
