@@ -8,7 +8,11 @@ import { NoteData } from "../../dummy-data/data";
 import NotesCardList from "../NotesCardList/NotesCardList";
 import { useSelector } from "react-redux";
 
-const LeftNav = () => {
+interface INotesCardListProps {
+  setEditNote: (editBoolean: boolean) => void;
+}
+
+const LeftNav: React.FC<INotesCardListProps> = ({ setEditNote }) => {
   const notesData = useSelector((state: any) => state.notesData.notesData);
   const [notes, setNotes] = useState([]);
 
@@ -38,7 +42,7 @@ const LeftNav = () => {
   };
   return (
     <div className="left-nav">
-      <LeftNavHeader onChange={onChange} />
+      <LeftNavHeader onChange={onChange} setEditNote={setEditNote} />
       <HorizontalLine />
       <NotesCardList notesData={notes} />
     </div>

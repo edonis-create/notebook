@@ -10,10 +10,12 @@ import { addNotesData } from "../../redux/slices/NotesDataSlice";
 
 interface ILeftNavHeaderProps {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  setEditNote: (editNote: boolean) => void;
 }
 
 const LeftNavHeader: React.FunctionComponent<ILeftNavHeaderProps> = ({
   onChange,
+  setEditNote,
 }) => {
   const dispatch = useDispatch();
   const notes = useSelector((state: any) => state.notesData.notesData);
@@ -27,7 +29,7 @@ const LeftNavHeader: React.FunctionComponent<ILeftNavHeaderProps> = ({
 
   console.log(notes, "notes");
 
-  const createNewNote = () =>
+  const createNewNote = () => {
     dispatch(
       addNotesData([
         ...notes,
@@ -42,6 +44,8 @@ const LeftNavHeader: React.FunctionComponent<ILeftNavHeaderProps> = ({
         },
       ])
     );
+    setEditNote(true);
+  };
   return (
     <Stack
       className="left-nav-header"

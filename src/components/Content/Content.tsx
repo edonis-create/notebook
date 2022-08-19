@@ -7,19 +7,24 @@ import NoteForm from "../NoteForm/NoteForm";
 import NotePreview from "../NotePreview/NotePreview";
 import Stack from "../Stack/Stack";
 import { addNotesData } from "../../redux/slices/NotesDataSlice";
-import { useState } from "react";
 
-const Content = () => {
-  const [editNote, setEditNote] = useState<boolean>(false);
+interface IContentProps {
+  editNote: boolean;
+  setEditNote: (editNote: boolean) => void;
+}
+const Content: React.FC<IContentProps> = ({ editNote }) => {
   const activeNoteId = useSelector(
     (state: any) => state.activeNote.activeNoteId
   );
   const notes = useSelector((state: any) => state.notesData.notesData);
   const dispatch = useDispatch();
-  /* Finding the active note in the notes array. If there is no active note, it will return the last note
-in the array. */
-  const activeNote =
-    notes.find((note: NoteData) => note.id === activeNoteId) ?? notes.at(-1);
+
+  /* Checking if the editNote is true, if it is, it will return the last note in the array, if it is
+  false, it will return the note that matches the activeNoteId. If there is no note that matches the
+  activeNoteId, it will return the last note in the array. */
+  const activeNote = editNote
+    ? notes.at(-1)
+    : notes.find((note: NoteData) => note.id === activeNoteId) ?? notes.at(-1);
 
   /**
    * It takes a note as an argument, and then it returns a new array of notes, where the note that
@@ -35,7 +40,6 @@ in the array. */
     });
     dispatch(addNotesData(newNotes));
   };
-
   if (!activeNote) {
     return (
       <Stack
@@ -47,14 +51,13 @@ in the array. */
       </Stack>
     );
   }
-  if (editNote) {
-    <Stack direction="column" alignItems="center" className="content">
-      <NoteForm activeNote={activeNote} handleUpdateNote={handleUpdateNote} />
-    </Stack>;
-  }
   return (
     <Stack direction="column" alignItems="center" className="content">
-      <NotePreview note={activeNote} />
+      {editNote ? (
+        <NoteForm activeNote={activeNote} handleUpdateNote={handleUpdateNote} />
+      ) : (
+        <NotePreview note={activeNote} />
+      )}
     </Stack>
   );
 };
