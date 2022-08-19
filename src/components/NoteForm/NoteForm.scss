@@ -6,6 +6,9 @@
     width: 100%;
     height: map-get($spacing, "lg");
     @include margin-bottom("lg");
+    @include tablet {
+      width: 90%;
+    }
   }
   &__text-area {
     width: 100%;
@@ -19,5 +22,14 @@
     &:focus {
       outline: none;
     }
+    @include tablet {
+      width: 90%;
+    }
+  }
+  @include tablet {
+    width: 90%;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 }

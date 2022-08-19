@@ -3,4 +3,10 @@
   width: 25%;
   background-color: $white-dark;
   height: 100vh;
+  @include laptop {
+    width: 35%;
+  }
+  @include tablet {
+    min-width: 100%;
+  }
 }

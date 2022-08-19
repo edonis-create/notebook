@@ -1,5 +1,7 @@
+@import "./scss/all";
 .App {
   height: 100vh;
-  overflow: hidden;
   width: 100vw;
+  transition: 0.3s ease-in-out;
+  overflow: hidden;
 }

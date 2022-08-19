@@ -1,11 +1,15 @@
 import "./NoteForm.scss";
 
+import Breakpoints from "../../foundation/Breakpoints";
 import Button from "../Button/Button";
 import Input from "../SearchInput/Input";
 import { NoteData } from "../../dummy-data/data";
 import React from "react";
 import Stack from "../Stack/Stack";
 import TextArea from "../TextArea/TextArea";
+import { setShowMobileContent } from "../../redux/slices/showMobileContentSlice";
+import { useDispatch } from "react-redux";
+import useWindowSize from "../../hooks/useWindowSize";
 
 interface INoteFormProps {
   activeNote: NoteData;
@@ -18,6 +22,8 @@ const NoteForm: React.FunctionComponent<INoteFormProps> = ({
   handleUpdateNote,
   setEditNote,
 }) => {
+  const { width } = useWindowSize();
+  const dispatch = useDispatch();
   /**
    * We're taking in a field and a value, and then we're updating the activeNote with the new value,
    * and then we're updating the note in the database
@@ -32,10 +38,24 @@ const NoteForm: React.FunctionComponent<INoteFormProps> = ({
         new Date().getMonth() + 1
       }.${new Date().getFullYear()}`,
     });
+  const isTablet = width <= Breakpoints["md"];
   return (
     <form className="note-form">
       <Stack direction="column">
-        <Stack className="full_width" justifyContent="flex-end">
+        <Stack
+          className="full_width mb_10"
+          justifyContent={isTablet ? "space-between" : "flex-end"}
+        >
+          {isTablet && (
+            <Button
+              designType="secondary"
+              height="lg"
+              width="xxl"
+              fontSize="base"
+              label="Back"
+              onClick={() => dispatch(setShowMobileContent(false))}
+            />
+          )}
           <Button
             height="lg"
             width="xxl"
@@ -44,7 +64,9 @@ const NoteForm: React.FunctionComponent<INoteFormProps> = ({
             onClick={() => setEditNote(false)}
           />
         </Stack>
-        <label htmlFor="title-input">Title:</label>
+        <label className="mb_10" htmlFor="title-input">
+          Title:
+        </label>
         <Input
           type="text"
           id="title-input"
@@ -56,7 +78,9 @@ const NoteForm: React.FunctionComponent<INoteFormProps> = ({
           }
           autoFocus
         />
-        <label htmlFor="title-category">Category:</label>
+        <label className="mb_10" htmlFor="title-category">
+          Category:
+        </label>
         <Input
           type="text"
           id="title-category"

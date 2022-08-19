@@ -1,0 +1,11 @@
+@import "../../scss/all";
+
+.note-preview {
+  &__sub-title {
+    font-size: map-get($map: $font-sizes, $key: "sm");
+    color: $gray;
+  }
+  &__description {
+    font-size: map-get($map: $font-sizes, $key: "lg");
+  }
+}

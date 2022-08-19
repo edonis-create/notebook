@@ -1,6 +1,8 @@
 @import "../../scss/all";
-
 .content {
   width: 100vw;
   height: 100vh;
+  @include tablet {
+    @include padding("xxxs");
+  }
 }
