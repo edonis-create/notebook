@@ -1,6 +1,5 @@
 import "./NoteForm.scss";
 
-import Button from "../Button/Button";
 import Input from "../SearchInput/Input";
 import { NoteData } from "../../dummy-data/data";
 import React from "react";
@@ -26,7 +25,9 @@ const NoteForm: React.FunctionComponent<INoteFormProps> = ({
     handleUpdateNote({
       ...activeNote,
       [field]: value,
-      created_at: `${new Date()}`,
+      created_at: `${new Date().getDate()}.${
+        new Date().getMonth() + 1
+      }.${new Date().getFullYear()}`,
     });
   return (
     <form className="note-form">
@@ -62,7 +63,6 @@ const NoteForm: React.FunctionComponent<INoteFormProps> = ({
             handleOnEdit("description", e.target.value)
           }
         />
-        <Button label="Save" />
       </Stack>
     </form>
   );

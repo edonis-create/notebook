@@ -36,7 +36,9 @@ const LeftNavHeader: React.FunctionComponent<ILeftNavHeaderProps> = ({
           title: "",
           description: "",
           category: "",
-          created_at: `${new Date()}`,
+          created_at: `${new Date().getDate()}.${
+            new Date().getMonth() + 1
+          }.${new Date().getFullYear()}`,
         },
       ])
     );
