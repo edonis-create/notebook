@@ -44,7 +44,7 @@ const LeftNav: React.FC<INotesCardListProps> = ({ setEditNote }) => {
     <div className="left-nav">
       <LeftNavHeader onChange={onChange} setEditNote={setEditNote} />
       <HorizontalLine />
-      <NotesCardList notesData={notes} />
+      <NotesCardList notesData={notes} setEditNote={setEditNote} />
     </div>
   );
 };

@@ -8,10 +8,12 @@ import { useDispatch } from "react-redux";
 
 interface INotesCardListProps {
   notesData: NotesData;
+  setEditNote: (editNote: boolean) => void;
 }
 
 const NotesCardList: React.FunctionComponent<INotesCardListProps> = ({
   notesData,
+  setEditNote,
 }) => {
   const dispatch = useDispatch();
   if (notesData.length === 0) {
@@ -25,7 +27,10 @@ const NotesCardList: React.FunctionComponent<INotesCardListProps> = ({
    * It takes an id, and then dispatches the setActiveNote action with that id
    * @param {number} id - number - the id of the note to be set as active
    */
-  const handleSetActiveNote = (id: number) => dispatch(setActiveNote(id));
+  const handleSetActiveNote = (id: number) => {
+    dispatch(setActiveNote(id));
+    setEditNote(false);
+  };
 
   return (
     <div className="notes-list">
