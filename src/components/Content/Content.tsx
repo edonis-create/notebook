@@ -54,7 +54,11 @@ const Content: React.FC<IContentProps> = ({ editNote, setEditNote }) => {
   return (
     <Stack direction="column" alignItems="center" className="content">
       {editNote ? (
-        <NoteForm activeNote={activeNote} handleUpdateNote={handleUpdateNote} />
+        <NoteForm
+          activeNote={activeNote}
+          setEditNote={setEditNote}
+          handleUpdateNote={handleUpdateNote}
+        />
       ) : (
         <NotePreview note={activeNote} setEditNote={setEditNote} />
       )}

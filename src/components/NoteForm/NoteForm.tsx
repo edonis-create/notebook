@@ -1,5 +1,6 @@
 import "./NoteForm.scss";
 
+import Button from "../Button/Button";
 import Input from "../SearchInput/Input";
 import { NoteData } from "../../dummy-data/data";
 import React from "react";
@@ -9,11 +10,13 @@ import TextArea from "../TextArea/TextArea";
 interface INoteFormProps {
   activeNote: NoteData;
   handleUpdateNote: (note: NoteData) => void;
+  setEditNote: (editNote: boolean) => void;
 }
 
 const NoteForm: React.FunctionComponent<INoteFormProps> = ({
   activeNote,
   handleUpdateNote,
+  setEditNote,
 }) => {
   /**
    * We're taking in a field and a value, and then we're updating the activeNote with the new value,
@@ -32,6 +35,15 @@ const NoteForm: React.FunctionComponent<INoteFormProps> = ({
   return (
     <form className="note-form">
       <Stack direction="column">
+        <Stack className="full_width" justifyContent="flex-end">
+          <Button
+            height="lg"
+            width="xxl"
+            fontSize="base"
+            label="Preview"
+            onClick={() => setEditNote(false)}
+          />
+        </Stack>
         <label htmlFor="title-input">Title:</label>
         <Input
           type="text"
