@@ -1,6 +1,23 @@
+@import "../../scss/all";
 .note-form {
+  @include margin-top("xxl");
   width: 80%;
   &__input {
     width: 100%;
+    height: map-get($spacing, "lg");
+    @include margin-bottom("lg");
+  }
+  &__text-area {
+    width: 100%;
+    height: 200px;
+    @include padding("sm");
+    @include border($search-input-border-color);
+    border-radius: 5px;
+    @include margin-bottom("lg");
+    background-color: $search-input-bg-color;
+    color: $search-input-color;
+    &:focus {
+      outline: none;
+    }
   }
 }

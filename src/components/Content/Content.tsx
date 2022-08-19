@@ -43,12 +43,7 @@ const Content = () => {
     );
   }
   return (
-    <Stack
-      direction="column"
-      justifyContent="center"
-      alignItems="center"
-      className="content"
-    >
+    <Stack direction="column" alignItems="center" className="content">
       <NoteForm activeNote={activeNote} handleUpdateNote={handleUpdateNote} />
     </Stack>
   );

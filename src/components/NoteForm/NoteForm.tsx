@@ -1,5 +1,6 @@
 import "./NoteForm.scss";
 
+import Button from "../Button/Button";
 import Input from "../SearchInput/Input";
 import { NoteData } from "../../dummy-data/data";
 import React from "react";
@@ -30,8 +31,10 @@ const NoteForm: React.FunctionComponent<INoteFormProps> = ({
   return (
     <form className="note-form">
       <Stack direction="column">
+        <label htmlFor="title-input">Title:</label>
         <Input
           type="text"
+          id="title-input"
           className="note-form__input"
           placeholder="Note Title"
           value={activeNote.title}
@@ -40,8 +43,10 @@ const NoteForm: React.FunctionComponent<INoteFormProps> = ({
           }
           autoFocus
         />
+        <label htmlFor="title-category">Category:</label>
         <Input
           type="text"
+          id="title-category"
           placeholder="Note Category"
           className="note-form__input"
           value={activeNote.category}
@@ -52,10 +57,12 @@ const NoteForm: React.FunctionComponent<INoteFormProps> = ({
         <TextArea
           className="note-form__text-area"
           placeholder="Your thoughts..."
+          value={activeNote.description}
           onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
             handleOnEdit("description", e.target.value)
           }
         />
+        <Button label="Save" />
       </Stack>
     </form>
   );
