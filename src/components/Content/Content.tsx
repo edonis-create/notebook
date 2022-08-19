@@ -12,7 +12,7 @@ interface IContentProps {
   editNote: boolean;
   setEditNote: (editNote: boolean) => void;
 }
-const Content: React.FC<IContentProps> = ({ editNote }) => {
+const Content: React.FC<IContentProps> = ({ editNote, setEditNote }) => {
   const activeNoteId = useSelector(
     (state: any) => state.activeNote.activeNoteId
   );
@@ -56,7 +56,7 @@ const Content: React.FC<IContentProps> = ({ editNote }) => {
       {editNote ? (
         <NoteForm activeNote={activeNote} handleUpdateNote={handleUpdateNote} />
       ) : (
-        <NotePreview note={activeNote} />
+        <NotePreview note={activeNote} setEditNote={setEditNote} />
       )}
     </Stack>
   );
